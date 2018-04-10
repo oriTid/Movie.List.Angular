@@ -1,0 +1,24 @@
+<div class="mainDiv" *ngFor="let i of movies, let j=index">
+  <button class="LeftBtn" (click)="selectedMovieFunc(i.id)">{{j+1}}</button>
+  <button class="RightBtn" (click)="selectedMovieFunc(i.id)">{{i.movie_name}}</button>
+</div>
+
+
+<table border="1" class="mainDiv" *ngIf="selctedMovie.id > 0">
+
+<tr>
+  <td>Movie Name</td>
+  <td>Movie Price</td>
+  <td>Movie Date</td>
+</tr>
+<tr>
+  <td>{{selctedMovie.movie_name}}</td>
+  <td>${{selctedMovie.price}}</td>
+  <td>{{selctedMovie.movie_date}}</td>
+</tr>
+
+</table>
+
+
+
+
