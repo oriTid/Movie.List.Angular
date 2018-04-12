@@ -1,1 +1,17 @@
-<div *ngIf="selectedMovie!=null">{{selectedMovie.movie_name}}</div>
+
+<table border="1" class="table table-striped table-bordered table-hover mainDiv" *ngIf="selectedMovie.id > 0">
+  <h3 style="text-align: center"> Movie Info:</h3>
+    <tr>
+      <td><b>Movie Name</b></td>
+      <td><b>Movie Price</b></td>
+      <td><b>Movie Date</b></td>
+    
+    </tr>
+    <tr>
+      <td>{{selectedMovie.movie_name}}</td>
+      <td>${{selectedMovie.price}}</td>
+      <td>{{selectedMovie.movie_date}}</td>
+    </tr>
+    
+    </table>
+

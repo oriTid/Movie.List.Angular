@@ -1,5 +1,5 @@
 <div class="mainDiv" *ngFor="let i of movies, let j=index">
-  <button class="LeftBtn" (click)="selectedMovieFunc(i.id)">{{j+1}}</button>
+  <button class="LeftBtn " (click)="selectedMovieFunc(i.id)">{{j+1}}</button>
   <button class="RightBtn" (click)="selectedMovieFunc(i.id)">{{i.movie_name}}</button>
 </div>
 

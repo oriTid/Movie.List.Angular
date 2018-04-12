@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {arr} from "../Shared/Models/MovieList";
 import { Movie } from '../Shared/Models/Movie';
 import { allResolved } from 'q';
@@ -10,6 +10,8 @@ import { allResolved } from 'q';
 })
 export class MainComponent {
 
+  @Output() chosenMovEmitter: EventEmitter<Movie>=new EventEmitter<Movie>();
+
 movies:Movie[]=arr;
  
 
@@ -18,8 +20,9 @@ selctedMovie: Movie = new Movie();
 selectedMovieFunc(movieID:number):void{
   for(let i of this.movies){
     if (i.id==movieID){
-      this.selctedMovie=i;
-            break;
+      this.chosenMovEmitter.emit(i);
+            
+      break;
         }
   }
   

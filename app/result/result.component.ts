@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../Shared/Models/Movie';
 import { MainComponent } from '../main/main.component';
 
@@ -9,6 +9,6 @@ import { MainComponent } from '../main/main.component';
 })
 export class ResultComponent  {
 
-  
+  @Input() selectedMovie:Movie;
 
 }
